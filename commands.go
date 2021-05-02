@@ -61,3 +61,15 @@ func SpanPointCalibration(i io.Writer, ref uint16) error {
 	req[4] = byte(ref & 0x00ff)
 	return writeCmd(i, req)
 }
+
+func AutomaticBaselineCalibration(i io.Writer, enabled bool) error {
+	req := buildRequest(0x01, byte(CmdAutomaticBaselineCalibration))
+
+	if enabled {
+		req[3] = 0xA0
+	} else {
+		req[3] = 0x00
+	}
+
+	return writeCmd(i, req)
+}

@@ -13,4 +13,6 @@ const (
 	CmdZeroPointCalibration Command = 0x87
 	// CmdSpanPointCalibration performs a span point calibration
 	CmdSpanPointCalibration Command = 0x88
+	// CmdAutomaticBaselineCalibration enables or disables automatic calibration
+	CmdAutomaticBaselineCalibration Command = 0x79
 )
